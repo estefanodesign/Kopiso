@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react'
+import React from 'react'
 import { useRouter } from 'next/navigation'
 import useAuthStore from '@/store/authStore'
 import toast from 'react-hot-toast'
@@ -13,7 +13,7 @@ const AdminGuard = ({ children }: AdminGuardProps) => {
   const router = useRouter()
   const { user, isAuthenticated, isLoading } = useAuthStore()
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (isLoading) return
 
     if (!isAuthenticated) {
