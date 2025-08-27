@@ -52,7 +52,6 @@ const nextConfig = {
     webVitalsAttribution: ['CLS', 'LCP'],
     scrollRestoration: true,
     // Vercel-specific optimizations
-    serverActions: true,
     typedRoutes: true,
   },
   
