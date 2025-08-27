@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { Eye, EyeOff, Mail, Lock, ArrowRight, User } from 'lucide-react'
@@ -11,17 +11,17 @@ export default function LoginPage() {
   const router = useRouter()
   const { login, isLoading, error, clearError } = useAuthStore()
   
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = React.useState({
     email: '',
     password: ''
   })
   
-  const [validationErrors, setValidationErrors] = useState<Record<string, string>>({})
-  const [showPassword, setShowPassword] = useState(false)
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [validationErrors, setValidationErrors] = React.useState<Record<string, string>>({})
+  const [showPassword, setShowPassword] = React.useState(false)
+  const [isSubmitting, setIsSubmitting] = React.useState(false)
 
   // Clear error when component unmounts
-  useEffect(() => {
+  React.useEffect(() => {
     return () => clearError()
   }, [clearError])
 
