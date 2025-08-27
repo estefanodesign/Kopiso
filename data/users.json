@@ -1,0 +1,157 @@
+[
+  {
+    "id": "admin-001",
+    "email": "admin@kopiso.com",
+    "password": "$2b$10$8K9wE5JX7gE5fJ8cR6vQKe5Kf9vEh3sB2qW4rT6yU8oI1pA3sD5fG",
+    "name": "Admin User",
+    "role": "admin",
+    "avatar": "/uploads/images/users/admin-avatar.jpg",
+    "phone": "+62812345678",
+    "addresses": [
+      {
+        "id": "addr-admin-001",
+        "type": "home",
+        "name": "Admin Home",
+        "street": "Jl. Admin Street No. 123",
+        "city": "Jakarta",
+        "state": "DKI Jakarta",
+        "zipCode": "12345",
+        "country": "Indonesia",
+        "isDefault": true
+      }
+    ],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "user-demo-001",
+    "email": "user@kopiso.com",
+    "password": "$2b$10$8K9wE5JX7gE5fJ8cR6vQKe5Kf9vEh3sB2qW4rT6yU8oI1pA3sD5fG",
+    "name": "Demo Customer",
+    "role": "customer",
+    "avatar": "/uploads/images/users/demo-avatar.jpg",
+    "phone": "+628123456789",
+    "addresses": [
+      {
+        "id": "addr-demo-001",
+        "type": "home",
+        "name": "Demo Home",
+        "street": "Jl. Demo Street No. 456",
+        "city": "Jakarta",
+        "state": "DKI Jakarta",
+        "zipCode": "12346",
+        "country": "Indonesia",
+        "isDefault": true
+      }
+    ],
+    "createdAt": "2024-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "user-001",
+    "email": "john.doe@example.com",
+    "password": "$2b$10$8K9wE5JX7gE5fJ8cR6vQKe5Kf9vEh3sB2qW4rT6yU8oI1pA3sD5fG",
+    "name": "John Doe",
+    "role": "customer",
+    "avatar": "/uploads/images/users/john-avatar.jpg",
+    "phone": "+1234567890",
+    "addresses": [
+      {
+        "id": "addr-001",
+        "type": "home",
+        "name": "Home Address",
+        "street": "123 Main Street, Apt 4B",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "10001",
+        "country": "United States",
+        "isDefault": true
+      },
+      {
+        "id": "addr-002",
+        "type": "work",
+        "name": "Office Address",
+        "street": "456 Business Ave, Suite 200",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "10002",
+        "country": "United States",
+        "isDefault": false
+      }
+    ],
+    "createdAt": "2024-02-15T08:30:00.000Z",
+    "updatedAt": "2024-02-15T08:30:00.000Z"
+  },
+  {
+    "id": "user-002",
+    "email": "jane.smith@example.com",
+    "password": "$2b$10$8K9wE5JX7gE5fJ8cR6vQKe5Kf9vEh3sB2qW4rT6yU8oI1pA3sD5fG",
+    "name": "Jane Smith",
+    "role": "customer",
+    "avatar": "/uploads/images/users/jane-avatar.jpg",
+    "phone": "+1987654321",
+    "addresses": [
+      {
+        "id": "addr-003",
+        "type": "home",
+        "name": "Home",
+        "street": "789 Oak Avenue",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zipCode": "90210",
+        "country": "United States",
+        "isDefault": true
+      }
+    ],
+    "createdAt": "2024-03-01T14:20:00.000Z",
+    "updatedAt": "2024-03-01T14:20:00.000Z"
+  },
+  {
+    "id": "user-003",
+    "email": "mike.johnson@example.com",
+    "password": "$2b$10$8K9wE5JX7gE5fJ8cR6vQKe5Kf9vEh3sB2qW4rT6yU8oI1pA3sD5fG",
+    "name": "Mike Johnson",
+    "role": "customer",
+    "avatar": "/uploads/images/users/mike-avatar.jpg",
+    "phone": "+1555123456",
+    "addresses": [
+      {
+        "id": "addr-004",
+        "type": "home",
+        "name": "Mike's Place",
+        "street": "321 Pine Street",
+        "city": "Chicago",
+        "state": "IL",
+        "zipCode": "60601",
+        "country": "United States",
+        "isDefault": true
+      }
+    ],
+    "createdAt": "2024-03-10T10:15:00.000Z",
+    "updatedAt": "2024-03-10T10:15:00.000Z"
+  },
+  {
+    "id": "user-004",
+    "email": "sarah.wilson@example.com",
+    "password": "$2b$10$8K9wE5JX7gE5fJ8cR6vQKe5Kf9vEh3sB2qW4rT6yU8oI1pA3sD5fG",
+    "name": "Sarah Wilson",
+    "role": "customer",
+    "avatar": "/uploads/images/users/sarah-avatar.jpg",
+    "phone": "+1444555666",
+    "addresses": [
+      {
+        "id": "addr-005",
+        "type": "home",
+        "name": "Sarah's Home",
+        "street": "654 Maple Drive",
+        "city": "Miami",
+        "state": "FL",
+        "zipCode": "33101",
+        "country": "United States",
+        "isDefault": true
+      }
+    ],
+    "createdAt": "2024-03-20T16:45:00.000Z",
+    "updatedAt": "2024-03-20T16:45:00.000Z"
+  }
+]

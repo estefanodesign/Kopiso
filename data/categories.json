@@ -1,0 +1,79 @@
+[
+  {
+    "id": "cat-electronics",
+    "name": "Electronics",
+    "description": "Latest gadgets and electronic devices",
+    "image": "/api/placeholder/64/64",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cat-fashion",
+    "name": "Fashion",
+    "description": "Clothing and accessories for men and women",
+    "image": "/api/placeholder/64/64",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cat-home-garden",
+    "name": "Home & Garden",
+    "description": "Everything for your home and garden",
+    "image": "/api/placeholder/64/64",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cat-sports",
+    "name": "Sports & Outdoors",
+    "description": "Sports equipment and outdoor gear",
+    "image": "/api/placeholder/64/64",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cat-books",
+    "name": "Books",
+    "description": "Books, audiobooks, and e-readers",
+    "image": "/api/placeholder/64/64",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cat-health-beauty",
+    "name": "Health & Beauty",
+    "description": "Health products and beauty essentials",
+    "image": "/api/placeholder/64/64",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cat-automotive",
+    "name": "Automotive",
+    "description": "Car accessories and auto parts",
+    "image": "/api/placeholder/64/64",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cat-toys-games",
+    "name": "Toys & Games",
+    "description": "Fun toys and games for all ages",
+    "image": "/api/placeholder/64/64",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cat-food-beverages",
+    "name": "Food & Beverages",
+    "description": "Gourmet food, coffee, tea, and specialty beverages",
+    "image": "/api/placeholder/64/64",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cat-souvenirs-gifts",
+    "name": "Souvenirs & Gifts",
+    "description": "Unique souvenirs, gifts, and collectibles",
+    "image": "/api/placeholder/64/64",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "cat-menu",
+    "name": "Menu",
+    "description": "Restaurant menus, food catalogs, and dining options",
+    "image": "/api/placeholder/64/64",
+    "createdAt": "2024-01-01T00:00:00.000Z"
+  }
+]

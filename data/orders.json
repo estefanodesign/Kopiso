@@ -1,0 +1,251 @@
+[
+  {
+    "id": "order-001",
+    "userId": "user-001",
+    "items": [
+      {
+        "id": "orderitem-001",
+        "productId": "prod-001",
+        "productName": "Premium Wireless Headphones",
+        "quantity": 1,
+        "price": 299.99,
+        "total": 299.99,
+        "image": "/images/products/headphones-1.jpg"
+      },
+      {
+        "id": "orderitem-002",
+        "productId": "prod-002",
+        "productName": "Smart Fitness Watch",
+        "quantity": 1,
+        "price": 199.99,
+        "total": 199.99,
+        "image": "/images/products/smartwatch-1.jpg"
+      }
+    ],
+    "status": "delivered",
+    "subtotal": 499.98,
+    "shipping": 9.99,
+    "tax": 45.00,
+    "total": 554.97,
+    "paymentMethod": "credit_card",
+    "paymentStatus": "paid",
+    "shippingAddress": {
+      "id": "addr-001",
+      "type": "home",
+      "name": "Home Address",
+      "street": "123 Main Street, Apt 4B",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001",
+      "country": "United States"
+    },
+    "trackingNumber": "TRK123456789",
+    "notes": "Please leave at front door",
+    "createdAt": "2024-03-25T09:30:00.000Z",
+    "updatedAt": "2024-03-28T14:20:00.000Z",
+    "deliveredAt": "2024-03-28T14:20:00.000Z"
+  },
+  {
+    "id": "order-002",
+    "userId": "user-002",
+    "items": [
+      {
+        "id": "orderitem-003",
+        "productId": "prod-003",
+        "productName": "Ergonomic Laptop Stand",
+        "quantity": 2,
+        "price": 89.99,
+        "total": 179.98,
+        "image": "/images/products/laptop-stand-1.jpg"
+      }
+    ],
+    "status": "shipped",
+    "subtotal": 179.98,
+    "shipping": 12.99,
+    "tax": 17.28,
+    "total": 210.25,
+    "paymentMethod": "paypal",
+    "paymentStatus": "paid",
+    "shippingAddress": {
+      "id": "addr-003",
+      "type": "home",
+      "name": "Home",
+      "street": "789 Oak Avenue",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zipCode": "90210",
+      "country": "United States"
+    },
+    "trackingNumber": "TRK987654321",
+    "notes": "",
+    "createdAt": "2024-03-26T15:45:00.000Z",
+    "updatedAt": "2024-03-27T10:30:00.000Z",
+    "shippedAt": "2024-03-27T10:30:00.000Z"
+  },
+  {
+    "id": "order-003",
+    "userId": "user-003",
+    "items": [
+      {
+        "id": "orderitem-004",
+        "productId": "prod-004",
+        "productName": "Ultra-Slim Phone Case",
+        "quantity": 3,
+        "price": 24.99,
+        "total": 74.97,
+        "image": "/images/products/phone-case-1.jpg"
+      },
+      {
+        "id": "orderitem-005",
+        "productId": "prod-005",
+        "productName": "Portable Bluetooth Speaker",
+        "quantity": 1,
+        "price": 79.99,
+        "total": 79.99,
+        "image": "/images/products/speaker-1.jpg"
+      }
+    ],
+    "status": "confirmed",
+    "subtotal": 154.96,
+    "shipping": 7.99,
+    "tax": 14.67,
+    "total": 177.62,
+    "paymentMethod": "credit_card",
+    "paymentStatus": "paid",
+    "shippingAddress": {
+      "id": "addr-004",
+      "type": "home",
+      "name": "Mike's Place",
+      "street": "321 Pine Street",
+      "city": "Chicago",
+      "state": "IL",
+      "zipCode": "60601",
+      "country": "United States"
+    },
+    "trackingNumber": "",
+    "notes": "Call before delivery",
+    "createdAt": "2024-03-27T11:20:00.000Z",
+    "updatedAt": "2024-03-27T13:15:00.000Z",
+    "confirmedAt": "2024-03-27T13:15:00.000Z"
+  },
+  {
+    "id": "order-004",
+    "userId": "user-004",
+    "items": [
+      {
+        "id": "orderitem-006",
+        "productId": "prod-006",
+        "productName": "Gaming Mouse Pro",
+        "quantity": 1,
+        "price": 149.99,
+        "total": 149.99,
+        "image": "/images/products/gaming-mouse-1.jpg"
+      }
+    ],
+    "status": "pending",
+    "subtotal": 149.99,
+    "shipping": 5.99,
+    "tax": 14.04,
+    "total": 170.02,
+    "paymentMethod": "credit_card",
+    "paymentStatus": "pending",
+    "shippingAddress": {
+      "id": "addr-005",
+      "type": "home",
+      "name": "Sarah's Home",
+      "street": "654 Maple Drive",
+      "city": "Miami",
+      "state": "FL",
+      "zipCode": "33101",
+      "country": "United States"
+    },
+    "trackingNumber": "",
+    "notes": "",
+    "createdAt": "2024-03-28T08:15:00.000Z",
+    "updatedAt": "2024-03-28T08:15:00.000Z"
+  },
+  {
+    "id": "order-005",
+    "userId": "user-001",
+    "items": [
+      {
+        "id": "orderitem-007",
+        "productId": "prod-007",
+        "productName": "4K Webcam for Streaming",
+        "quantity": 1,
+        "price": 159.99,
+        "total": 159.99,
+        "image": "/images/products/webcam-1.jpg"
+      },
+      {
+        "id": "orderitem-008",
+        "productId": "prod-008",
+        "productName": "Mechanical Keyboard RGB",
+        "quantity": 1,
+        "price": 129.99,
+        "total": 129.99,
+        "image": "/images/products/keyboard-1.jpg"
+      }
+    ],
+    "status": "cancelled",
+    "subtotal": 289.98,
+    "shipping": 11.99,
+    "tax": 27.18,
+    "total": 329.15,
+    "paymentMethod": "credit_card",
+    "paymentStatus": "refunded",
+    "shippingAddress": {
+      "id": "addr-001",
+      "type": "home",
+      "name": "Home Address",
+      "street": "123 Main Street, Apt 4B",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001",
+      "country": "United States"
+    },
+    "trackingNumber": "",
+    "notes": "Customer requested cancellation",
+    "cancellationReason": "Changed mind",
+    "createdAt": "2024-03-24T13:45:00.000Z",
+    "updatedAt": "2024-03-25T16:30:00.000Z",
+    "cancelledAt": "2024-03-25T16:30:00.000Z"
+  },
+  {
+    "id": "order-006",
+    "userId": "user-002",
+    "items": [
+      {
+        "id": "orderitem-009",
+        "productId": "prod-009",
+        "productName": "Wireless Charging Pad",
+        "quantity": 2,
+        "price": 39.99,
+        "total": 79.98,
+        "image": "/images/products/wireless-charger-1.jpg"
+      }
+    ],
+    "status": "delivered",
+    "subtotal": 79.98,
+    "shipping": 4.99,
+    "tax": 7.65,
+    "total": 92.62,
+    "paymentMethod": "apple_pay",
+    "paymentStatus": "paid",
+    "shippingAddress": {
+      "id": "addr-003",
+      "type": "home",
+      "name": "Home",
+      "street": "789 Oak Avenue",
+      "city": "Los Angeles",
+      "state": "CA",
+      "zipCode": "90210",
+      "country": "United States"
+    },
+    "trackingNumber": "TRK456789123",
+    "notes": "",
+    "createdAt": "2024-03-22T10:30:00.000Z",
+    "updatedAt": "2024-03-25T09:45:00.000Z",
+    "deliveredAt": "2024-03-25T09:45:00.000Z"
+  }
+]

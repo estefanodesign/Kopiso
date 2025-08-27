@@ -1,0 +1,139 @@
+[
+  {
+    "id": "txn-001",
+    "orderId": "order-001",
+    "type": "revenue",
+    "amount": 554.97,
+    "description": "Order payment - Premium Wireless Headphones, Smart Fitness Watch",
+    "category": "product_sales",
+    "paymentMethod": "credit_card",
+    "reference": "order-001",
+    "date": "2024-03-25T09:30:00.000Z",
+    "createdAt": "2024-03-25T09:30:00.000Z"
+  },
+  {
+    "id": "txn-002",
+    "orderId": "order-002",
+    "type": "revenue",
+    "amount": 210.25,
+    "description": "Order payment - Ergonomic Laptop Stand (2x)",
+    "category": "product_sales",
+    "paymentMethod": "paypal",
+    "reference": "order-002",
+    "date": "2024-03-26T15:45:00.000Z",
+    "createdAt": "2024-03-26T15:45:00.000Z"
+  },
+  {
+    "id": "txn-003",
+    "orderId": "order-003",
+    "type": "revenue",
+    "amount": 177.62,
+    "description": "Order payment - Ultra-Slim Phone Case (3x), Portable Bluetooth Speaker",
+    "category": "product_sales",
+    "paymentMethod": "credit_card",
+    "reference": "order-003",
+    "date": "2024-03-27T11:20:00.000Z",
+    "createdAt": "2024-03-27T11:20:00.000Z"
+  },
+  {
+    "id": "txn-004",
+    "orderId": "order-005",
+    "type": "refund",
+    "amount": -329.15,
+    "description": "Refund for cancelled order - 4K Webcam, Mechanical Keyboard RGB",
+    "category": "refunds",
+    "paymentMethod": "credit_card",
+    "reference": "order-005",
+    "date": "2024-03-25T16:30:00.000Z",
+    "createdAt": "2024-03-25T16:30:00.000Z"
+  },
+  {
+    "id": "txn-005",
+    "orderId": "order-006",
+    "type": "revenue",
+    "amount": 92.62,
+    "description": "Order payment - Wireless Charging Pad (2x)",
+    "category": "product_sales",
+    "paymentMethod": "apple_pay",
+    "reference": "order-006",
+    "date": "2024-03-22T10:30:00.000Z",
+    "createdAt": "2024-03-22T10:30:00.000Z"
+  },
+  {
+    "id": "txn-006",
+    "type": "expense",
+    "amount": -150.00,
+    "description": "Monthly hosting and domain costs",
+    "category": "hosting",
+    "paymentMethod": "bank_transfer",
+    "reference": "hosting-march-2024",
+    "date": "2024-03-01T00:00:00.000Z",
+    "createdAt": "2024-03-01T00:00:00.000Z"
+  },
+  {
+    "id": "txn-007",
+    "type": "expense",
+    "amount": -2500.00,
+    "description": "Product inventory purchase - Electronics batch",
+    "category": "inventory",
+    "paymentMethod": "bank_transfer",
+    "reference": "inv-purchase-001",
+    "date": "2024-03-15T00:00:00.000Z",
+    "createdAt": "2024-03-15T00:00:00.000Z"
+  },
+  {
+    "id": "txn-008",
+    "type": "expense",
+    "amount": -75.50,
+    "description": "Shipping and packaging supplies",
+    "category": "shipping",
+    "paymentMethod": "credit_card",
+    "reference": "shipping-supplies-001",
+    "date": "2024-03-20T00:00:00.000Z",
+    "createdAt": "2024-03-20T00:00:00.000Z"
+  },
+  {
+    "id": "txn-009",
+    "type": "expense",
+    "amount": -300.00,
+    "description": "Marketing campaign - Google Ads",
+    "category": "marketing",
+    "paymentMethod": "credit_card",
+    "reference": "google-ads-march",
+    "date": "2024-03-10T00:00:00.000Z",
+    "createdAt": "2024-03-10T00:00:00.000Z"
+  },
+  {
+    "id": "txn-010",
+    "type": "expense",
+    "amount": -120.00,
+    "description": "Payment processing fees",
+    "category": "fees",
+    "paymentMethod": "automatic_deduction",
+    "reference": "stripe-fees-march",
+    "date": "2024-03-31T00:00:00.000Z",
+    "createdAt": "2024-03-31T00:00:00.000Z"
+  },
+  {
+    "id": "txn-011",
+    "type": "revenue",
+    "amount": 89.99,
+    "description": "Direct product sale - Laptop Stand",
+    "category": "product_sales",
+    "paymentMethod": "cash",
+    "reference": "direct-sale-001",
+    "date": "2024-03-18T00:00:00.000Z",
+    "createdAt": "2024-03-18T00:00:00.000Z"
+  },
+  {
+    "id": "txn-012",
+    "type": "expense",
+    "amount": -50.00,
+    "description": "Office supplies and stationery",
+    "category": "office",
+    "paymentMethod": "petty_cash",
+    "reference": "office-supplies-001",
+    "date": "2024-03-05T00:00:00.000Z",
+    "createdAt": "2024-03-05T00:00:00.000Z"
+  }
+]
