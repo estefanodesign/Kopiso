@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Link from 'next/link'
 import useAdminStore from '@/store/adminStore'
 import { 
@@ -32,23 +32,23 @@ const AdminAccountingPage = () => {
     isLoading 
   } = useAdminStore()
 
-  const [searchTerm, setSearchTerm] = useState('')
-  const [typeFilter, setTypeFilter] = useState('all')
-  const [categoryFilter, setCategoryFilter] = useState('all')
-  const [sortBy, setSortBy] = useState('date')
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc')
-  const [currentPage, setCurrentPage] = useState(1)
-  const [showAddModal, setShowAddModal] = useState(false)
-  const [showDeleteModal, setShowDeleteModal] = useState(false)
-  const [transactionToDelete, setTransactionToDelete] = useState<Transaction | null>(null)
-  const [accountingSummary, setAccountingSummary] = useState({
+  const [searchTerm, setSearchTerm] = React.useState('')
+  const [typeFilter, setTypeFilter] = React.useState('all')
+  const [categoryFilter, setCategoryFilter] = React.useState('all')
+  const [sortBy, setSortBy] = React.useState('date')
+  const [sortOrder, setSortOrder] = React.useState<'asc' | 'desc'>('desc')
+  const [currentPage, setCurrentPage] = React.useState(1)
+  const [showAddModal, setShowAddModal] = React.useState(false)
+  const [showDeleteModal, setShowDeleteModal] = React.useState(false)
+  const [transactionToDelete, setTransactionToDelete] = React.useState<Transaction | null>(null)
+  const [accountingSummary, setAccountingSummary] = React.useState({
     totalRevenue: 0,
     totalExpenses: 0,
     totalRefunds: 0,
     netProfit: 0
   })
 
-  const [newTransaction, setNewTransaction] = useState({
+  const [newTransaction, setNewTransaction] = React.useState({
     type: 'revenue' as 'revenue' | 'expense' | 'refund',
     amount: '',
     description: '',
@@ -58,7 +58,7 @@ const AdminAccountingPage = () => {
 
   const itemsPerPage = 15
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetchTransactions()
     fetchAccountingSummary()
   }, [fetchTransactions])

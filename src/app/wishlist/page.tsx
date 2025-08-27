@@ -4,7 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import CustomerLayout from '@/components/CustomerLayout'
-import { useCartStore } from '@/store/cartStore'
+import useCartStore from '@/store/cartStore'
 import { Heart, ShoppingCart, Star, Trash2 } from 'lucide-react'
 import { notifications } from '@/utils/notifications'
 
