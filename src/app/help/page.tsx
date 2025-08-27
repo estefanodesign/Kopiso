@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import { useState } from 'react'
 import CustomerLayout from '@/components/CustomerLayout'
 import { 
   Search, 
@@ -27,7 +26,7 @@ export default function HelpPage() {
     {
       id: '1',
       question: 'How do I create an account?',
-      answer: 'Click on the \"Sign Up\" button in the top right corner and fill out the registration form with your email, password, and basic information.',
+      answer: 'Click on the "Sign Up" button in the top right corner and fill out the registration form with your email, password, and basic information.',
       category: 'account'
     },
     {
@@ -97,37 +96,37 @@ export default function HelpPage() {
 
   return (
     <CustomerLayout>
-      <div className=\"min-h-screen bg-neutral-50\">
-        <div className=\"bg-gradient-to-r from-primary-500 to-secondary-500 text-white\">
-          <div className=\"container-width section-padding py-16\">
-            <div className=\"text-center max-w-3xl mx-auto\">
-              <h1 className=\"text-4xl md:text-5xl font-bold mb-4\">How can we help you?</h1>
-              <p className=\"text-xl text-primary-100 mb-8\">
+      <div className="min-h-screen bg-neutral-50">
+        <div className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white">
+          <div className="container-width section-padding py-16">
+            <div className="text-center max-w-3xl mx-auto">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">How can we help you?</h1>
+              <p className="text-xl text-primary-100 mb-8">
                 Search our knowledge base or contact our support team
               </p>
               
-              <div className=\"relative max-w-2xl mx-auto\">
-                <div className=\"absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none\">
-                  <Search className=\"h-6 w-6 text-gray-400\" />
+              <div className="relative max-w-2xl mx-auto">
+                <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                  <Search className="h-6 w-6 text-gray-400" />
                 </div>
                 <input
-                  type=\"text\"
-                  placeholder=\"Search for help...\"
+                  type="text"
+                  placeholder="Search for help..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className=\"w-full pl-12 pr-4 py-4 text-gray-900 bg-white rounded-xl border-0 focus:ring-2 focus:ring-primary-300 focus:outline-none text-lg\"
+                  className="w-full pl-12 pr-4 py-4 text-gray-900 bg-white rounded-xl border-0 focus:ring-2 focus:ring-primary-300 focus:outline-none text-lg"
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className=\"container-width section-padding py-12\">
-          <div className=\"grid grid-cols-1 lg:grid-cols-4 gap-8\">
-            <div className=\"lg:col-span-1\">
-              <div className=\"bg-white rounded-xl shadow-sm border border-gray-200 p-6 sticky top-8\">
-                <h3 className=\"font-semibold text-gray-900 mb-4\">Browse by Category</h3>
-                <div className=\"space-y-2\">
+        <div className="container-width section-padding py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <div className="lg:col-span-1">
+              <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 sticky top-8">
+                <h3 className="font-semibold text-gray-900 mb-4">Browse by Category</h3>
+                <div className="space-y-2">
                   {categories.map(category => {
                     const Icon = category.icon
                     return (
@@ -140,26 +139,26 @@ export default function HelpPage() {
                             : 'hover:bg-gray-50 text-gray-700'
                         }`}
                       >
-                        <Icon className=\"h-5 w-5\" />
-                        <span className=\"text-sm font-medium\">{category.name}</span>
+                        <Icon className="h-5 w-5" />
+                        <span className="text-sm font-medium">{category.name}</span>
                       </button>
                     )
                   })}
                 </div>
 
-                <div className=\"mt-8 pt-6 border-t border-gray-200\">
-                  <h4 className=\"font-semibold text-gray-900 mb-4\">Need More Help?</h4>
-                  <div className=\"space-y-3\">
-                    <div className=\"flex items-center space-x-3 text-sm text-gray-600\">
-                      <Phone className=\"h-4 w-4 text-primary-500\" />
+                <div className="mt-8 pt-6 border-t border-gray-200">
+                  <h4 className="font-semibold text-gray-900 mb-4">Need More Help?</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-center space-x-3 text-sm text-gray-600">
+                      <Phone className="h-4 w-4 text-primary-500" />
                       <span>+1 (555) 123-4567</span>
                     </div>
-                    <div className=\"flex items-center space-x-3 text-sm text-gray-600\">
-                      <Mail className=\"h-4 w-4 text-primary-500\" />
+                    <div className="flex items-center space-x-3 text-sm text-gray-600">
+                      <Mail className="h-4 w-4 text-primary-500" />
                       <span>support@kopiso.com</span>
                     </div>
-                    <div className=\"flex items-center space-x-3 text-sm text-gray-600\">
-                      <Clock className=\"h-4 w-4 text-primary-500\" />
+                    <div className="flex items-center space-x-3 text-sm text-gray-600">
+                      <Clock className="h-4 w-4 text-primary-500" />
                       <span>Mon-Fri, 9AM-6PM EST</span>
                     </div>
                   </div>
@@ -167,22 +166,22 @@ export default function HelpPage() {
               </div>
             </div>
 
-            <div className=\"lg:col-span-3\">
-              <div className=\"bg-white rounded-xl shadow-sm border border-gray-200\">
-                <div className=\"p-6 border-b border-gray-200\">
-                  <h2 className=\"text-2xl font-bold text-gray-900 mb-2\">Frequently Asked Questions</h2>
-                  <p className=\"text-gray-600\">
+            <div className="lg:col-span-3">
+              <div className="bg-white rounded-xl shadow-sm border border-gray-200">
+                <div className="p-6 border-b border-gray-200">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">Frequently Asked Questions</h2>
+                  <p className="text-gray-600">
                     {filteredFAQs.length} {filteredFAQs.length === 1 ? 'question' : 'questions'} found
                     {activeCategory !== 'all' && ` in ${categories.find(c => c.id === activeCategory)?.name}`}
                   </p>
                 </div>
 
-                <div className=\"divide-y divide-gray-200\">
+                <div className="divide-y divide-gray-200">
                   {filteredFAQs.length === 0 ? (
-                    <div className=\"p-8 text-center\">
-                      <HelpCircle className=\"h-12 w-12 text-gray-300 mx-auto mb-4\" />
-                      <h3 className=\"text-lg font-medium text-gray-900 mb-2\">No results found</h3>
-                      <p className=\"text-gray-600 mb-4\">
+                    <div className="p-8 text-center">
+                      <HelpCircle className="h-12 w-12 text-gray-300 mx-auto mb-4" />
+                      <h3 className="text-lg font-medium text-gray-900 mb-2">No results found</h3>
+                      <p className="text-gray-600 mb-4">
                         Try adjusting your search or selecting a different category.
                       </p>
                       <button
@@ -190,33 +189,33 @@ export default function HelpPage() {
                           setSearchQuery('')
                           setActiveCategory('all')
                         }}
-                        className=\"text-primary-600 hover:text-primary-700 font-medium\"
+                        className="text-primary-600 hover:text-primary-700 font-medium"
                       >
                         Clear filters
                       </button>
                     </div>
                   ) : (
                     filteredFAQs.map(faq => (
-                      <div key={faq.id} className=\"border-b border-gray-200 last:border-b-0\">
+                      <div key={faq.id} className="border-b border-gray-200 last:border-b-0">
                         <button
                           onClick={() => toggleFAQ(faq.id)}
-                          className=\"w-full px-6 py-6 text-left hover:bg-gray-50 transition-colors\"
+                          className="w-full px-6 py-6 text-left hover:bg-gray-50 transition-colors"
                         >
-                          <div className=\"flex items-center justify-between\">
-                            <h3 className=\"text-lg font-medium text-gray-900 pr-4\">
+                          <div className="flex items-center justify-between">
+                            <h3 className="text-lg font-medium text-gray-900 pr-4">
                               {faq.question}
                             </h3>
                             {expandedFAQ === faq.id ? (
-                              <ChevronUp className=\"h-5 w-5 text-gray-500 flex-shrink-0\" />
+                              <ChevronUp className="h-5 w-5 text-gray-500 flex-shrink-0" />
                             ) : (
-                              <ChevronDown className=\"h-5 w-5 text-gray-500 flex-shrink-0\" />
+                              <ChevronDown className="h-5 w-5 text-gray-500 flex-shrink-0" />
                             )}
                           </div>
                         </button>
                         
                         {expandedFAQ === faq.id && (
-                          <div className=\"px-6 pb-6\">
-                            <p className=\"text-gray-600 leading-relaxed\">
+                          <div className="px-6 pb-6">
+                            <p className="text-gray-600 leading-relaxed">
                               {faq.answer}
                             </p>
                           </div>
@@ -232,4 +231,4 @@ export default function HelpPage() {
       </div>
     </CustomerLayout>
   )
-}"
+}
