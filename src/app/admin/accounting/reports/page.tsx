@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import useAdminStore from '@/store/adminStore'
 import { 
   Calendar,
@@ -32,16 +32,16 @@ interface AccountingSummary {
 
 const AdminReportsPage = () => {
   const { isLoading } = useAdminStore()
-  const [selectedPeriod, setSelectedPeriod] = useState('year')
-  const [summary, setSummary] = useState<AccountingSummary>({
+  const [selectedPeriod, setSelectedPeriod] = React.useState('year')
+  const [summary, setSummary] = React.useState<AccountingSummary>({
     totalRevenue: 0,
     totalExpenses: 0,
     totalRefunds: 0,
     netProfit: 0
   })
-  const [monthlyData, setMonthlyData] = useState<MonthlyData[]>([])
+  const [monthlyData, setMonthlyData] = React.useState<MonthlyData[]>([])
 
-  useEffect(() => {
+  React.useEffect(() => {
     fetchFinancialData()
   }, [])
 
