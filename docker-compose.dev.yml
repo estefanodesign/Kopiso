@@ -1,0 +1,50 @@
+# Development override for Docker Compose
+# Use with: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up
+
+version: '3.8'
+
+services:
+  # Development overrides for Next.js app
+  app:
+    build:
+      target: development
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    command: npm run dev
+    ports:
+      - "3000:3000"
+    
+  # Development overrides for API
+  api:
+    build:
+      target: development
+    environment:
+      - NODE_ENV=development
+      - DEBUG=*
+    volumes:
+      - ./server:/app/server
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+      - /app/node_modules
+    command: npm run server:dev
+    
+  # Development database with exposed port
+  database:
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: kopiso_dev
+      POSTGRES_USER: kopiso_dev
+      POSTGRES_PASSWORD: dev_password
+      
+  # Development redis
+  redis:
+    command: redis-server --save 20 1 --loglevel warning
+    ports:
+      - "6379:6379"

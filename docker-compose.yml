@@ -1,0 +1,219 @@
+# Docker Compose configuration for Kopiso E-commerce Platform
+# Supports both development and production environments
+
+version: '3.8'
+
+# =============================================================================
+# SERVICES DEFINITION
+# =============================================================================
+services:
+  # Next.js Application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: ${DOCKER_TARGET:-production}
+      args:
+        NODE_ENV: ${NODE_ENV:-production}
+        NEXT_PUBLIC_BASE_URL: ${NEXT_PUBLIC_BASE_URL}
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+        NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-Kopiso}
+    container_name: kopiso-app
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-3000}:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - NEXT_PUBLIC_BASE_URL=${NEXT_PUBLIC_BASE_URL}
+      - NEXT_PUBLIC_API_URL=${NEXT_PUBLIC_API_URL}
+      - NEXT_PUBLIC_APP_NAME=${NEXT_PUBLIC_APP_NAME:-Kopiso}
+    volumes:
+      - ./uploads:/app/uploads
+      - ./logs:/app/logs
+      - app_data:/app/data
+    depends_on:
+      - api
+      - redis
+    networks:
+      - kopiso-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Express.js API Server
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+      target: ${DOCKER_TARGET:-production}
+    container_name: kopiso-api
+    restart: unless-stopped
+    ports:
+      - "${API_PORT:-3001}:3001"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORT=3001
+      - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_REFRESH_SECRET=${JWT_REFRESH_SECRET}
+      - SESSION_SECRET=${SESSION_SECRET}
+      - REDIS_URL=redis://redis:6379
+      - UPLOAD_PATH=/app/uploads
+    volumes:
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - api_data:/app/data
+    depends_on:
+      - redis
+      - database
+    networks:
+      - kopiso-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: kopiso-redis
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    command: >
+      --requirepass ${REDIS_PASSWORD:-defaultpassword}
+      --maxmemory 256mb
+      --maxmemory-policy allkeys-lru
+    volumes:
+      - redis_data:/data
+    networks:
+      - kopiso-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Database (PostgreSQL)
+  database:
+    image: postgres:15-alpine
+    container_name: kopiso-database
+    restart: unless-stopped
+    ports:
+      - "${DATABASE_PORT:-5432}:5432"
+    environment:
+      POSTGRES_DB: ${DATABASE_NAME:-kopiso}
+      POSTGRES_USER: ${DATABASE_USER:-kopiso}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-secure_password}
+      POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --lc-collate=C --lc-ctype=C"
+    volumes:
+      - database_data:/var/lib/postgresql/data
+      - ./scripts/init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    networks:
+      - kopiso-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USER:-kopiso} -d ${DATABASE_NAME:-kopiso}"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Nginx Reverse Proxy (Production)
+  nginx:
+    image: nginx:alpine
+    container_name: kopiso-nginx
+    restart: unless-stopped
+    ports:
+      - "${HTTP_PORT:-80}:80"
+      - "${HTTPS_PORT:-443}:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./uploads:/var/www/uploads:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - app
+      - api
+    networks:
+      - kopiso-network
+    profiles:
+      - production
+
+  # Monitoring with Prometheus (Optional)
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: kopiso-prometheus
+    restart: unless-stopped
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    networks:
+      - kopiso-network
+    profiles:
+      - monitoring
+
+  # Grafana for visualization (Optional)
+  grafana:
+    image: grafana/grafana:latest
+    container_name: kopiso-grafana
+    restart: unless-stopped
+    ports:
+      - "${GRAFANA_PORT:-3030}:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin123}
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    networks:
+      - kopiso-network
+    profiles:
+      - monitoring
+
+# =============================================================================
+# VOLUMES
+# =============================================================================
+volumes:
+  app_data:
+    driver: local
+  api_data:
+    driver: local
+  database_data:
+    driver: local
+  redis_data:
+    driver: local
+  nginx_logs:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+
+# =============================================================================
+# NETWORKS
+# =============================================================================
+networks:
+  kopiso-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+
+# =============================================================================
+# DEVELOPMENT OVERRIDE
+# =============================================================================
+# For development, use: docker-compose -f docker-compose.yml -f docker-compose.dev.yml up

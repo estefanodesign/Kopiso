@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "outDir": "./dist",
+    "rootDir": ".",
+    "strict": true,
+    "noEmit": false,
+    "declaration": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@/types": ["../src/types"],
+      "@/services/*": ["./services/*"],
+      "@/middleware/*": ["./middleware/*"],
+      "@/routes/*": ["./routes/*"],
+      "@/utils/*": ["./utils/*"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "../src/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "../src/app",
+    "../src/components"
+  ],
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "transpileOnly": true,
+    "files": true
+  }
+}
