@@ -35,7 +35,7 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
   const router = useRouter()
   const pathname = usePathname()
   const { user, logout } = useAuthStore()
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = React.useState(false)
 
   const handleLogout = () => {
     logout()
